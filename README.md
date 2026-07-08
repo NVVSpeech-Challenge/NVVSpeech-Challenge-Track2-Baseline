@@ -159,7 +159,7 @@ python scripts/test_voxcpm_ft_infer.py \
 
 Scores computed via Gemini 2.5 Pro LALM evaluation.
 
-**Test method**: The baseline model is trained with Chinese NVV tags. All samples (both Chinese and English) are synthesized by mapping English NVV tags to their corresponding Chinese equivalents (e.g., `<laugh>` → `[笑声]`) before inference. The generated audio is then evaluated via the official LALM-based protocol.
+**Test method**: The baseline model is trained with Chinese NVV tags. All samples (both Chinese and English) are synthesized by mapping English NVV tags to their corresponding Chinese equivalents (e.g., `<laugh>` → `[笑声]`) before inference. The generated audio is then evaluated via the LALM-based protocol.
 
 ### Component Scores (1–5 scale, mean over all samples)
 
@@ -223,4 +223,4 @@ $$\text{Track2Score} = 100 \times (0.30A + 0.25P + 0.15N + 0.15Q + 0.15E)$$
 | [笑声] laugh | 4.00 | 3.20 | 3.24 | 3.12 | 3.68 | 62.65 |
 | [哭声] cry | 3.90 | 3.26 | 3.18 | 3.16 | 3.58 | 61.82 |
 
-> **Note**: NVV tags are mapped to Chinese (e.g., `<laugh>` → `[笑声]`) before synthesis, as the baseline model is trained with Chinese NVV tags. Results obtained using the VoxCPM2 baseline model (full fine-tuning). The LALM evaluation follows the official Track 2 protocol with Gemini 2.5 Pro as the judge. For the final leaderboard, top-ranked systems will additionally undergo human listening tests.
+> **Note**: NVV tags are mapped to Chinese (e.g., `<laugh>` → `[笑声]`) before synthesis, as the baseline model is trained with Chinese NVV tags. Results obtained using the VoxCPM2 baseline model (full fine-tuning). The LALM evaluation follows the Track 2 protocol with Gemini 2.5 Pro as the judge. For the final leaderboard, top-ranked systems will additionally undergo human listening tests.
