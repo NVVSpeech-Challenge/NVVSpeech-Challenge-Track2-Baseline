@@ -155,73 +155,9 @@ python scripts/test_voxcpm_ft_infer.py \
 
 ---
 
-## 6. Evaluation
+## 6. Baseline Results
 
-### 6.1 Task Definition
-
-Track 2 evaluates whether a system can generate the intended Nonverbal Vocalizations (NVVs) while maintaining natural, high-quality, and contextually appropriate speech. Given a transcript containing one or more NVV tags, participants are required to generate speech that naturally integrates the specified NVVs.
-
-**Input format** (tagged transcript):
-```json
-{
-  "utt_id": "example_002",
-  "text_with_nvvs": "That was really surprising. [laugh]"
-}
-```
-
-**Output format**: One waveform per utterance in **16 kHz, mono, 16-bit PCM WAV** format, named using the corresponding `utt_id` (e.g., `example_002.wav`).
-
-### 6.2 Evaluation Metrics
-
-The official Track 2 score is a weighted combination of five components rated on a five-point scale and normalized to [0, 1]:
-
-$$\text{Track2Score} = 100 \times (0.30A + 0.25P + 0.15N + 0.15Q + 0.15E)$$
-
-| Component | Weight | Description |
-|---|---|---|
-| **NVV Accuracy (A)** | 30% | Whether the intended NVV types, numbers, and positions are correctly realized. Score = 0 if the target NVV is absent or almost inaudible. |
-| **NVV Perceptual Effect (P)** | 25% | Whether the intended NVVs are clearly audible, recognizable, and perceptually effective. Score = 0 if the target NVV is absent or almost inaudible. |
-| **Overall Naturalness (N)** | 15% | Naturalness, fluency, and acoustic continuity of the full utterance. |
-| **Overall Quality (Q)** | 15% | Perceived audio quality, including the absence of noticeable artifacts. |
-| **Overall Expression (E)** | 15% | Whether the expressive delivery is coherent and appropriate for the linguistic content, target NVVs, and conversational context. |
-
-### 6.3 Bilingual Ranking Score
-
-Track 2 evaluates both Chinese (ZH) and English (EN) languages. The final bilingual ranking score is:
-
-$$\text{FinalTrack2Score} = \frac{\text{Track2Score}_{ZH} + \text{Track2Score}_{EN}}{2}$$
-
-### 6.4 Evaluation Protocol
-
-- **Public Leaderboard**: Scores are obtained using a fixed **Large Audio-Language Model (LALM)-based multi-rater evaluation** protocol.
-- **Final Ranking**: Top-ranked systems additionally undergo **human listening tests**. Final scores combine LALM-based and human ratings.
-- **Tie-breaking**: In the event of a tie, higher NVV Accuracy → higher NVV Perceptual Effect → higher Overall Naturalness is used sequentially.
-
-### 6.5 LALM-Based Evaluation Metrics
-
-The official evaluation uses a **Large Audio-Language Model (LALM)** (Gemini 2.5 Pro) as a multi-rater judge. For tag-based Track 2, the LALM directly rates all five components on a 1–5 scale:
-
-| LALM Metric (JSON key) | Track 2 Component | Scale | Description |
-|---|---|---|---|
-| `nvc_accuracy_score` | **NVV Accuracy (A)** | 0–5 | Whether NVV type, number, and position match the input tags. Score = 0 if NVV is absent. |
-| `nvc_pe_score` | **NVV Perceptual Effect (P)** | 0–5 | How natural, expressive, and effective the NVVs sound. Score = 0 if NVV is absent. |
-| `overall_naturalness_score` | **Overall Naturalness (N)** | 1–5 | Human-likeness of prosody, pronunciation, and flow. |
-| `overall_quality_score` | **Overall Quality (Q)** | 1–5 | Signal fidelity (noise, distortion, artifacts). |
-| `overall_expression_score` | **Overall Expression (E)** | 1–5 | Coherence and appropriateness of expressive delivery. |
-
-The LALM evaluation follows a rigorous multi-rater protocol:
-- **Multi-rater simulation**: N=4–5 raters with different calibration profiles (balanced, quality_strict, naturalness_strict, lenient, harsh)
-- **3-fold evaluation**: Each sample is evaluated in one of three shuffled rounds
-- **Hard-cap post-processing**: Consistency rules prevent contradictory scores (e.g., Quality=5 when artifacts are mentioned)
-- **Comparative judging** (`GROUP_COMPARE=1`): Multiple systems evaluated side-by-side with anonymized labels, simulating a real listening test
-
-The component scores are normalized from [1,5] to [0,1] via `(score − 1) / 4`, then combined with the official weighting formula to produce the final Track2Score.
-
----
-
-## 7. Baseline Results
-
-Scores computed via Gemini 2.5 Pro LALM multi-rater evaluation with `N_RATERS=5, N_ROUNDS=1, MAX_WORKERS=30`.
+Scores computed via Gemini 2.5 Pro LALM evaluation.
 
 **Test method**: The baseline model is trained with Chinese NVV tags. All samples (both Chinese and English) are synthesized by mapping English NVV tags to their corresponding Chinese equivalents (e.g., `<laugh>` → `[笑声]`) before inference. The generated audio is then evaluated via the official LALM-based protocol.
 
