@@ -1,0 +1,23 @@
+{
+  "呼吸": "breath",
+  "倒吸气": "inhale",
+  "叹气": "sigh",
+  "哈欠": "yawn",
+  "打鼾": "snore",
+  "咳嗽": "cough",
+  "打喷嚏": "sneeze",
+  "清嗓": "clears_throat",
+  "吸鼻": "sniff",
+  "笑声": "laugh",
+  "哭声": "crying",
+  "呻吟": "groan",
+  "哼唱": "humming",
+  "惊讶": "gasp",
+  "确认": "hmm",
+  "疑问": "hmm",
+  "迟疑": "mumble",
+  "不满": "grunt",
+  "嘘声": "whispers",
+  "嘶声": "hiss",
+  "咂嘴": "lipsmack"
+}

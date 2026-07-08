@@ -1,0 +1,24 @@
+VoxCPM_中文标签,拼音,英文翻译,NVV-SuperBench_标签,NVV-SuperBench_大类,备注
+呼吸,hūxī,breath,breath,Respiratory,直接对应
+倒吸气,dào xī qì,inhale/gasp,inhale,Respiratory,倒吸气强调吸气动作；NVV-SuperBench 中 gasp 也涵盖惊讶吸气
+叹气,tànqì,sigh,sigh,Respiratory,直接对应
+哈欠,hāqian,yawn,yawn,Respiratory,直接对应
+打鼾,dǎ hān,snore,snore,Respiratory,直接对应
+咳嗽,késou,cough,cough,Throat / Physiological,直接对应
+打喷嚏,dǎ pēntì,sneeze,sneeze,Throat / Physiological,直接对应
+清嗓,qīng sǎng,throat clearing,clears_throat,Throat / Physiological,直接对应
+吸鼻,xī bí,sniff/sniffle,sniff / sniffle,Throat / Physiological,吸鼻涵盖 sniff(短促吸鼻)和 sniffle(连续吸鼻)
+笑声,xiào shēng,laugh/laughter,laugh,Laughter Spectrum,VoxCPM 笑声为统称；NVV-SuperBench 细分为 chuckle/giggle/laugh/laughs_harder/starts_laughing/stifled_laugh/bursts_of_laughter
+哭声,kū shēng,crying,crying,Crying Spectrum,VoxCPM 哭声为统称；NVV-SuperBench 细分为 crying/sobbing/crying_loudly/wail/whimper
+呻吟,shēnyín,groan/moan,groan / moan,Emotional Vocalizations,呻吟涵盖 groan(低沉呻吟)和 moan(绵长呻吟)
+哼唱,hēng chàng,hum/humming,hum / humming,Emotional Vocalizations,直接对应
+惊讶,jīngyà,gasp/surprise,gasp,Respiratory,惊讶通常表现为 gasp(倒抽气/惊叹声)
+确认,quèrèn,confirmation,hmm / ah / oh,Emotional Vocalizations,确认声如"嗯""啊""哦"对应 NVV-SuperBench 的 exclamation (ah, oh, hmm)
+疑问,yíwèn,questioning,hmm,Emotional Vocalizations,疑问声如"嗯？""啊？"对应 hmm 等语气词
+迟疑,chíyí,hesitation,mumble,Emotional Vocalizations,迟疑声如"呃""嗯…"对应 mumble(含混/犹豫的发声)
+不满,bùmǎn,discontent,grunt / groan,Emotional Vocalizations,不满声如"哼""嗯"对应 grunt(短促不满声)或 groan(低沉不满声)
+嘘声,xū shēng,hiss/shh,whispers / hiss,Oral / Miscellaneous,嘘声可指嘘声(hiss/shh)或低语(whispers)
+嘶声,sī shēng,hiss/sss,hiss / sss,Oral / Miscellaneous,嘶声对应 hiss(嘶嘶声)或 sss(咝音)
+咂嘴,zā zuǐ,lipsmack,lipsmack,Oral / Miscellaneous,直接对应
+吹口哨,chuī kǒushào,whistling,—,—,吹口哨不属于 NVV(非言语发声)核心范畴；NVV-SuperBench 45类中未收录
+鼓掌,gǔzhǎng,clapping,—,—,鼓掌为动作声效而非 NVV(非言语发声)；NVV-SuperBench 45类中未收录
