@@ -165,11 +165,11 @@ Scores computed via Gemini 2.5 Pro LALM evaluation.
 
 | Component | Weight | ZH | EN |
 |---|---|---|---|
-| NVV Accuracy (A) | 30% | 4.59 | 4.38 |
-| NVV Perceptual Effect (P) | 25% | 4.50 | 3.88 |
-| Overall Naturalness (N) | 15% | 3.87 | 3.42 |
-| Overall Quality (Q) | 15% | 3.03 | 3.14 |
-| Overall Expression (E) | 15% | 4.30 | 3.75 |
+| NVV Accuracy (A) | 30% | 4.52 | 4.37 |
+| NVV Perceptual Effect (P) | 25% | 4.41 | 3.90 |
+| Overall Naturalness (N) | 15% | 3.73 | 3.37 |
+| Overall Quality (Q) | 15% | 3.03 | 3.08 |
+| Overall Expression (E) | 15% | 4.21 | 3.74 |
 
 ### Track 2 Score
 
@@ -177,6 +177,6 @@ $$\text{Track2Score} = 100 \times (0.30A + 0.25P + 0.15N + 0.15Q + 0.15E)$$
 
 | Language | Track2Score |
 |---|---|
-| ZH | **63.70** |
-| EN | **56.77** |
-| **Bilingual Final** | **60.24** |
+| ZH | **77.62** |
+| EN | **70.30** |
+| **Bilingual Final** | **73.96** |
